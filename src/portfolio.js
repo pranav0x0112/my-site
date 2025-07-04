@@ -20,13 +20,13 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Pranav M",
+  username: "Pranav M", 
   title: "Hi. I'm Pranav M",
   subTitle: emoji(
-    "I am an Undergraduate Electronics studentcl drawn to digital hardware, processor design, and embedded systems. Currently building open-source RISC-V cores and SoCs, while exploring verification methodologies, microarchitecture,and performance-driven design."
+    "I am an Undergraduate Electronics student drawn to digital hardware, processor design, and embedded systems. Currently building open-source RISC-V cores and SoCs, while exploring verification methodologies, microarchitecture, and performance-driven design."
   ),
-  resumeLink: "/resume.pdf", // Add your resume link here
-  displayGreeting: true // Set false to hide this section, defaults to true
+  resumeLink: "/resume.pdf",
+  displayGreeting: true
 };
 
 // Social Media Links

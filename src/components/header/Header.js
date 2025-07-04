@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Headroom from "react-headroom";
 import "./Header.scss";
@@ -19,6 +19,13 @@ function Header() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  // Instead of conditionally rendering based on hasMounted,
+  // we'll handle this differently
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
@@ -31,9 +38,8 @@ function Header() {
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
-          <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
+          {/* Use this approach to avoid the fragment issue */}
+          <span className="logo-name">{isClient ? greeting.username : ""}</span>
         </a>
 
         <input className="menu-btn" type="checkbox" id="menu-btn" />
@@ -45,43 +51,27 @@ function Header() {
           {isHomePage && (
             <>
               {viewSkills && (
-                <li>
-                  <a href="#skills">Skills</a>
-                </li>
+                <li><a href="#skills">Skills</a></li>
               )}
               {viewExperience && (
-                <li>
-                  <a href="#experience">Work Experiences</a>
-                </li>
+                <li><a href="#experience">Work Experiences</a></li>
               )}
               {viewOpenSource && (
-                <li>
-                  <a href="#opensource">Open Source</a>
-                </li>
+                <li><a href="#opensource">Open Source</a></li>
               )}
               {viewAchievement && (
-                <li>
-                  <a href="#achievements">Achievements</a>
-                </li>
+                <li><a href="#achievements">Achievements</a></li>
               )}
               {viewBlog && (
-                <li>
-                  <a href="#blogs">Blogs</a>
-                </li>
+                <li><a href="#blogs">Blogs</a></li>
               )}
               {viewTalks && (
-                <li>
-                  <a href="#talks">Talks</a>
-                </li>
+                <li><a href="#talks">Talks</a></li>
               )}
               {viewResume && (
-                <li>
-                  <a href="#resume">Resume</a>
-                </li>
+                <li><a href="#resume">Resume</a></li>
               )}
-              <li>
-                <a href="#contact">Contact Me</a>
-              </li>
+              <li><a href="#contact">Contact Me</a></li>
             </>
           )}
         </ul>
