@@ -1,16 +1,14 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Blog.scss";
 import BlogCard from "../../components/blogCard/BlogCard";
-import {blogSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { blogSection } from "../../portfolio";
+import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-export default function Blogs() {
-  const {isDark} = useContext(StyleContext);
+
+export default function Blogs({ previewMode = false }) {
+  const { isDark } = useContext(StyleContext);
   const [mediumBlogs, setMediumBlogs] = useState([]);
-  function setMediumBlogsFunction(array) {
-    setMediumBlogs(array);
-  }
-  //Medium API returns blogs' content in HTML format. Below function extracts blogs' text content within paragraph tags
+
   function extractTextContent(html) {
     return typeof html === "string"
       ? html
@@ -19,80 +17,64 @@ export default function Blogs() {
           .filter(el => el.trim().length > 0)
           .map(el => el.replace(/<\/?[^>]+(>|$)/g, "").trim())
           .join(" ")
-      : NaN;
+      : "";
   }
+
   useEffect(() => {
     if (blogSection.displayMediumBlogs === "true") {
-      const getProfileData = () => {
-        fetch("/blogs.json")
-          .then(result => {
-            if (result.ok) {
-              return result.json();
-            }
-          })
-          .then(response => {
-            setMediumBlogsFunction(response.items);
-          })
-          .catch(function (error) {
-            console.error(
-              `${error} (because of this error Blogs section could not be displayed. Blogs section has reverted to default)`
-            );
-            setMediumBlogsFunction("Error");
-            blogSection.displayMediumBlogs = "false";
-          });
-      };
-      getProfileData();
+      fetch("/blogs.json")
+        .then(result => {
+          if (result.ok) return result.json();
+        })
+        .then(response => {
+          setMediumBlogs(response.items);
+        })
+        .catch(error => {
+          console.error(
+            `${error} (Blogs section could not be displayed. Reverting to hardcoded blogs)`
+          );
+          setMediumBlogs("Error");
+          blogSection.displayMediumBlogs = "false";
+        });
     }
   }, []);
-  if (!blogSection.display) {
-    return null;
-  }
+
+  if (!blogSection.display) return null;
+
+  const displayedBlogs =
+    blogSection.displayMediumBlogs !== "true" || mediumBlogs === "Error"
+      ? blogSection.blogs
+      : mediumBlogs.map(blog => ({
+          url: blog.link,
+          title: blog.title,
+          description: extractTextContent(blog.content)
+        }));
+
+  const blogsToShow = previewMode ? displayedBlogs.slice(0, 2) : displayedBlogs;
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="blogs">
         <div className="blog-header">
           <h1 className="blog-header-text">{blogSection.title}</h1>
-          <p
-            className={
-              isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-            }
-          >
+          <p className={isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"}>
             {blogSection.subtitle}
           </p>
         </div>
         <div className="blog-main-div">
           <div className="blog-text-div">
-            {blogSection.displayMediumBlogs !== "true" ||
-            mediumBlogs === "Error"
-              ? blogSection.blogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.url,
-                        image: blog.image,
-                        title: blog.title,
-                        description: blog.description
-                      }}
-                    />
-                  );
-                })
-              : mediumBlogs.map((blog, i) => {
-                  return (
-                    <BlogCard
-                      key={i}
-                      isDark={isDark}
-                      blog={{
-                        url: blog.link,
-                        title: blog.title,
-                        description: extractTextContent(blog.content)
-                      }}
-                    />
-                  );
-                })}
+            {blogsToShow.map((blog, i) => (
+              <BlogCard key={i} isDark={isDark} blog={blog} />
+            ))}
           </div>
         </div>
+        {previewMode && (
+  <div className="read-more-button project-button">
+    <a className="main-button" href="/blogs">
+      Read all blogs →
+    </a>
+  </div>
+)}
       </div>
     </Fade>
   );
