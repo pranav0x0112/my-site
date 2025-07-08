@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Guestbook.scss";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp,
+} from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function Guestbook() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,10 +20,16 @@ export default function Guestbook() {
     message: "",
   });
 
-  // Load existing entries from localStorage
+  // 🔄 Fetch guestbook entries from Firestore
   useEffect(() => {
-    const stored = localStorage.getItem("guestbookEntries");
-    setEntries(stored ? JSON.parse(stored) : []);
+    const fetchEntries = async () => {
+      const q = query(collection(db, "guestbook"), orderBy("timestamp", "desc"));
+      const snapshot = await getDocs(q);
+      const fetched = snapshot.docs.map((doc) => doc.data());
+      setEntries(fetched);
+    };
+
+    fetchEntries();
   }, []);
 
   const handleChange = (e) => {
@@ -25,20 +40,23 @@ export default function Guestbook() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newEntry = {
       name: isAnon ? "Anonymous" : formData.name,
       message: formData.message,
+      timestamp: serverTimestamp(),
     };
 
-    const updatedEntries = [newEntry, ...entries];
-    setEntries(updatedEntries);
-    localStorage.setItem("guestbookEntries", JSON.stringify(updatedEntries));
-
-    setFormData({ name: "", message: "" });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2000);
+    try {
+      await addDoc(collection(db, "guestbook"), newEntry);
+      setEntries((prev) => [newEntry, ...prev]);
+      setFormData({ name: "", message: "" });
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 2000);
+    } catch (err) {
+      console.error("Failed to submit entry:", err);
+    }
   };
 
   return (
