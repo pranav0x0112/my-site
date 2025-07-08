@@ -22,11 +22,15 @@ const illustration = {
 const greeting = {
   username: "Pranav M", 
   title: "Hi. I'm Pranav M",
-  subTitle: emoji(
-    "I am an Undergraduate Electronics student drawn to digital hardware, processor design, and embedded systems. Currently building open-source RISC-V cores and SoCs, while exploring verification methodologies, microarchitecture, and performance-driven design."
-  ),
+subTitle: emoji(
+  "I am an Undergraduate Electronics student drawn to digital hardware, processor design, and embedded systems. Currently building open-source RISC-V cores and SoCs, while exploring verification methodologies, microarchitecture, and performance-driven design. Check out my blogs, and feel free to sign my guestbook!"
+),
   resumeLink: "/resume.pdf",
   displayGreeting: true
+};
+
+export const guestbookSection = {
+  display: true, // set to false to hide it
 };
 
 // Social Media Links

@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Headroom from "react-headroom";
 import "./Header.scss";
 import StyleContext from "../../contexts/StyleContext";
+import { guestbookSection } from "../../portfolio";
 import {
   greeting,
   workExperiences,
@@ -19,8 +20,6 @@ function Header() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
-  // Instead of conditionally rendering based on hasMounted,
-  // we'll handle this differently
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -33,12 +32,12 @@ function Header() {
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
   const viewResume = resumeSection.display;
+  const viewGuestbook = guestbookSection.display;
 
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
-          {/* Use this approach to avoid the fragment issue */}
           <span className="logo-name">{isClient ? greeting.username : ""}</span>
         </a>
 
@@ -48,30 +47,22 @@ function Header() {
         </label>
 
         <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {isHomePage && (
+          {isHomePage ? (
             <>
-              {viewSkills && (
-                <li><a href="#skills">Skills</a></li>
-              )}
-              {viewExperience && (
-                <li><a href="#experience">Work Experiences</a></li>
-              )}
-              {viewOpenSource && (
-                <li><a href="#opensource">Open Source</a></li>
-              )}
-              {viewAchievement && (
-                <li><a href="#achievements">Achievements</a></li>
-              )}
-              {viewBlog && (
-                <li><a href="#blogs">Blogs</a></li>
-              )}
-              {viewTalks && (
-                <li><a href="#talks">Talks</a></li>
-              )}
-              {viewResume && (
-                <li><a href="#resume">Resume</a></li>
-              )}
+              {viewSkills && <li><a href="#skills">Skills</a></li>}
+              {viewExperience && <li><a href="#experience">Work Experiences</a></li>}
+              {viewOpenSource && <li><a href="#opensource">Open Source</a></li>}
+              {viewAchievement && <li><a href="#achievements">Achievements</a></li>}
+              {viewBlog && <li><a href="#blogs">Blogs</a></li>}
+              {viewTalks && <li><a href="#talks">Talks</a></li>}
+              {viewResume && <li><a href="#resume">Resume</a></li>}
+              {viewGuestbook && <li><a href="/guestbook">Guestbook</a></li>}
               <li><a href="#contact">Contact Me</a></li>
+            </>
+          ) : (
+            <>
+              {viewBlog && <li><a href="/blogs">Blogs</a></li>}
+              {viewGuestbook && <li><a href="/guestbook">Guestbook</a></li>}
             </>
           )}
         </ul>

@@ -1,0 +1,102 @@
+@import "../../_globalColor";
+
+.guestbook {
+  background-color: $lightBackground1;
+  color: $textColor;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+
+    input,
+    textarea {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+      background-color: $lightBackground2;
+      color: $textColor;
+    }
+
+    button {
+      background-color: $buttonColor;
+      color: $textColorDark;
+      padding: 0.75rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+
+  .anon-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .log-title {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $subTitle;
+    text-align: center;
+  }
+
+  .guestbook-log {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .guestbook-entry {
+    background-color: $lightBackground2;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 0 16px $lightBoxShadow;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $textColor;
+    word-wrap: break-word;
+  }
+}
+
+// === DARK MODE SUPPORT ===
+.dark-mode .guestbook {
+  background-color: $darkBackground;
+  color: $textColorDark;
+
+  input,
+  textarea {
+    background-color: $darkBackground;
+    color: $textColorDark;
+    border: 1px solid $darkBoxShadow2;
+  }
+
+  button {
+    background-color: $buttonColor;
+    color: $textColorDark;
+  }
+
+  .guestbook-entry {
+    background-color: $darkBackground;
+    color: $textColorDark;
+    box-shadow: 0 0 12px $darkBoxShadow2;
+  }
+
+  .log-title {
+    color: $textColorDark;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.scss";
 import Main from "./containers/Main";
 import Blogs from "./containers/blogs/Blogs";
+import Guestbook from "./containers/guestbook/Guestbook"
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ScrollToTopButton from "./containers/topbutton/Top";
@@ -28,6 +29,17 @@ function App() {
               <Blogs />
               <Footer />
               <ScrollToTopButton />
+            </>
+          )}
+        />
+        <Route 
+          path="/guestbook"
+          render={() => (
+            <>
+            <Header />
+            <Guestbook />
+            <Footer />
+            <ScrollToTopButton />
             </>
           )}
         />
