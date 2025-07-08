@@ -326,7 +326,7 @@ const contactInfo = {
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+91-6364820816",
-  email_address: "pranavmofficial2005@gmail.com"
+  email_address: "pranavm.m1205@gmail.com"
 };
 
 // Twitter Section
