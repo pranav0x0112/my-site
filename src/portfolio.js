@@ -277,12 +277,22 @@ const blogSection = {
       title: "Resona: Rust, RISC-V Assembly, and DSP Kernels",
       description:
         "My first blog! A deep dive into building a tiny DSP-inspired simulator using Rust and hand-written RISC-V Assembly — with chaos, bloopers, and all."
+    },
+    {
+      url: "https://aetheron-soc.hashnode.dev/aetheron-bringing-my-own-soc-to-life",
+      title: "Aetheron: Bringing My Own SoC to Life",
+      description:
+        "A full walkthrough of my personal SoC project — from blinking LEDs to running C code on a simulated RISC-V system I built from scratch in Bluespec."
+    },
+    {
+      url: "https://what-is-a-soc.hashnode.dev/what-is-a-system-on-chip-really?showSharer=true",
+      title: "What is a System-on-Chip, Really?",
+      description:
+        "A beginner-friendly breakdown of what SoCs are, how they differ from microcontrollers, and why they matter in the embedded world."
     }
-    // You can add more blogs here later
   ],
   display: true
 };
-
 
 // Talks Sections
 
