@@ -282,13 +282,13 @@ const blogSection = {
       url: "https://aetheron-soc.hashnode.dev/aetheron-bringing-my-own-soc-to-life",
       title: "Aetheron: Bringing My Own SoC to Life",
       description:
-        "A full walkthrough of my personal SoC project — from blinking LEDs to running C code on a simulated RISC-V system I built from scratch in Bluespec."
+        "My journey building a RISC-V SoC from scratch designed in Bluespec, capable of running real C code, all in simulation."
     },
     {
       url: "https://what-is-a-soc.hashnode.dev/what-is-a-system-on-chip-really?showSharer=true",
       title: "What is a System-on-Chip, Really?",
       description:
-        "A beginner-friendly breakdown of what SoCs are, how they differ from microcontrollers, and why they matter in the embedded world."
+        "An accessible introduction to System-on-Chips — what they are, why they fascinate me, and the vital role they play in modern embedded systems."
     }
   ],
   display: true
