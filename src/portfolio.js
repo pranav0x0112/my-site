@@ -289,6 +289,12 @@ const blogSection = {
       title: "What is a System-on-Chip, Really?",
       description:
         "An accessible introduction to System-on-Chips — what they are, why they fascinate me, and the vital role they play in modern embedded systems."
+    },
+    {
+      url: "https://tiny-tone.hashnode.dev/",
+      title: "Tiny-Tone, My First Accepted Tiny-Tapeout Design",
+      description:
+        "Tiny-Tone is a minimal PWM audio tone generator submitted for the TinyQV RISC-V SoC peripheral challenge."
     }
   ],
   display: true
