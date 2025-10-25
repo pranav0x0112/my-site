@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.scss";
 import Main from "./containers/Main";
 import Blogs from "./containers/blogs/Blogs";
+import BlogPost from "./components/BlogPost/BlogPost";
 import Guestbook from "./containers/guestbook/Guestbook"
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -22,11 +23,24 @@ function App() {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route
+          exact
           path="/blogs"
           render={() => (
             <>
               <Header />
               <Blogs />
+              <Footer />
+              <ScrollToTopButton />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/blogs/:slug"
+          render={() => (
+            <>
+              <Header />
+              <BlogPost />
               <Footer />
               <ScrollToTopButton />
             </>

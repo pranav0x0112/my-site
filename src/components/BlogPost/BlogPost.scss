@@ -1,0 +1,120 @@
+.blogpost-main {
+  min-height: 70vh;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.blogpost-container {
+  max-width: 800px;
+  width: 100%;
+  background: var(--card-bg, #fff);
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.post-title {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.post-date {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content pre {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.post-content code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+.blog-post-page {
+  width: 100%;
+  min-height: 80vh;
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.blog-post-container {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card-bg, #fff);
+  padding: 2.5rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.dark-mode .blog-post-container {
+  background: #111;
+  color: #ddd;
+  box-shadow: none;
+}
+
+.blog-post-container h1,
+.blog-post-container h2,
+.blog-post-container h3 {
+  margin-top: 1.25rem;
+}
+
+.blog-post-container pre {
+  background: #0b0b0b;
+  color: #e6e6e6;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.dark-mode .blog-post-container pre {
+  background: #0b0b0b;
+}
+.blog-post-main {
+  width: 100%;
+  min-height: 70vh;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-inner {
+  max-width: 900px;
+  width: 100%;
+}
+
+.blog-post-title {
+  font-size: 40px;
+  margin-bottom: 0.25rem;
+}
+
+.blog-post-date {
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-content {
+  line-height: 1.7;
+}
+
+.blog-post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.dark-mode .blog-post-content {
+  color: #ddd;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Blog.scss";
 import BlogCard from "../../components/blogCard/BlogCard";
 import { blogSection } from "../../portfolio";
+import localPosts from "../../posts/postsIndex";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -41,9 +42,13 @@ export default function Blogs({ previewMode = false }) {
 
   if (!blogSection.display) return null;
 
+  // Prefer local posts index when available. Local posts should be defined in src/posts/postsIndex.js
   const displayedBlogs =
     blogSection.displayMediumBlogs !== "true" || mediumBlogs === "Error"
-      ? blogSection.blogs
+      ? // if localPosts exists and has entries, use that (maps to internal /blogs/:slug)
+        (localPosts && localPosts.length > 0
+          ? localPosts.map(p => ({ url: p.url, title: p.title, description: p.description }))
+          : blogSection.blogs)
       : mediumBlogs.map(blog => ({
           url: blog.link,
           title: blog.title,

@@ -273,25 +273,25 @@ const blogSection = {
   displayMediumBlogs: "false", // Set to false to show your own hardcoded blogs
   blogs: [
     {
-      url: "https://resona-rust-riscv-dsp.hashnode.dev/resona-v100-rust-risc-v-assembly-and-dsp-kernels",
+      url: "/blogs/resona",
       title: "Resona: Rust, RISC-V Assembly, and DSP Kernels",
       description:
         "My first blog! A deep dive into building a tiny DSP-inspired simulator using Rust and hand-written RISC-V Assembly — with chaos, bloopers, and all."
     },
     {
-      url: "https://aetheron-soc.hashnode.dev/aetheron-bringing-my-own-soc-to-life",
+      url: "/blogs/aetheron",
       title: "Aetheron: Bringing My Own SoC to Life",
       description:
         "My journey building a RISC-V SoC from scratch designed in Bluespec, capable of running real C code, all in simulation."
     },
     {
-      url: "https://what-is-a-soc.hashnode.dev/what-is-a-system-on-chip-really?showSharer=true",
+      url: "/blogs/what-is-a-soc",
       title: "What is a System-on-Chip, Really?",
       description:
         "An accessible introduction to System-on-Chips — what they are, why they fascinate me, and the vital role they play in modern embedded systems."
     },
     {
-      url: "https://tiny-tone.hashnode.dev/tiny-tone",
+      url: "/blogs/tiny-tone",
       title: "Tiny-Tone, My First Accepted Tiny-Tapeout Design",
       description:
         "Tiny-Tone is a minimal PWM audio tone generator submitted for the TinyQV RISC-V SoC peripheral challenge."
