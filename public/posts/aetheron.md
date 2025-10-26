@@ -1,7 +1,7 @@
 ---
 title: "Aetheron: Bringing My Own SoC to Life"
 image: "/assets/images/aetheron.png"
-date: "2024-06-18"
+date: "2025-07-18"
 description: "From wires to life: how I built and booted my own System-On-Chip using BlueSpec SystemVerilog"
 tags:
   - soc
