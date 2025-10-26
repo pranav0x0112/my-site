@@ -10,25 +10,25 @@ const posts = [
     "url": "/blogs/tiny-tone"
   },
   {
-    "slug": "aetheron",
-    "title": "Aetheron: Bringing My Own SoC to Life",
-    "description": "My journey building a RISC-V SoC from scratch designed in Bluespec.",
-    "date": "2024-06-18",
-    "url": "/blogs/aetheron"
-  },
-  {
-    "slug": "resona",
-    "title": "Resona: Rust, RISC-V Assembly, and DSP Kernels",
-    "description": "A deep dive into building a tiny DSP-inspired simulator using Rust and hand-written RISC-V Assembly.",
-    "date": "2024-04-05",
-    "url": "/blogs/resona"
+    "slug": "riscv-linux",
+    "title": "RISC-V: The Linux of Hardware",
+    "description": "At Homebrew, we talk a lot about Linux and FOSS software. But what if I told you there’s a Linux moment happening in hardware too?",
+    "date": "2025-09-07",
+    "url": "/blogs/riscv-linux"
   },
   {
     "slug": "what-is-a-soc",
     "title": "What is a System-on-Chip, Really?",
-    "description": "An accessible introduction to System-on-Chips — what they are and why they matter.",
-    "date": "2023-12-01",
+    "description": "A gentle breakdown of what SoCs are and why I’m obsessed with them.",
+    "date": "2025-07-18",
     "url": "/blogs/what-is-a-soc"
+  },
+  {
+    "slug": "aetheron",
+    "title": "Aetheron: Bringing My Own SoC to Life",
+    "description": "From wires to life: how I built and booted my own System-On-Chip using BlueSpec SystemVerilog",
+    "date": "2024-06-18",
+    "url": "/blogs/aetheron"
   }
 ];
 

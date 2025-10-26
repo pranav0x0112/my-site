@@ -79,6 +79,13 @@ export default function BlogPost() {
           <h1 className="blog-post-title">{meta.title}</h1>
           {meta.date && <p className="blog-post-date">{meta.date}</p>}
 
+          {/* Optional cover image: add `image: '/path/to/image.jpg'` in the post frontmatter */}
+          {meta.image && (
+            <div className="blog-post-cover-container">
+              <img className="blog-post-cover" src={meta.image} alt={meta.title || 'cover image'} />
+            </div>
+          )}
+
           <div className="blog-post-content">
             {!loading && (
               <ReactMarkdown

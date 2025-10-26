@@ -1,5 +1,6 @@
 ---
 title: "Tiny Tone - My First Accepted Tiny-Tapeout Design"
+image: "/assets/images/tiny-tone.png"
 date: "2025-10-25"
 description: "A small PWM-based audio tone generator submitted to TinyQV Tiny Tapeout — design notes and lessons learned."
 tags:

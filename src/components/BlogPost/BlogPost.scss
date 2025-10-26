@@ -97,6 +97,24 @@
 /* Images */
 .blog-post-content img { display: block; margin: 1.25rem auto; max-width: 100%; height: auto; border-radius: 6px; }
 
+/* Cover image (appears above content when `meta.image` is present) */
+.blog-post-cover-container {
+  width: 100%;
+  margin: 1rem 0 1.5rem 0;
+  display: block;
+}
+.blog-post-cover {
+  width: 100%;
+  max-height: 420px; /* constrain very tall images */
+  object-fit: cover; /* crop to fill while preserving aspect */
+  display: block;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-cover { max-height: 240px; }
+}
+
 /* Code blocks (use variable so code blocks match theme) */
 .blog-post-content pre {
   margin: 1rem 0;
