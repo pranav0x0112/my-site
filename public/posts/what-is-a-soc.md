@@ -81,8 +81,6 @@ That’s the beauty: SoCs scale. From your watch to your laptop to your car’s 
 
 What drew me in wasn’t just the formal textbook definition of a System-on-Chip. It was the magic of **integration**.
 
-In my [first blog](https://resona-rust-riscv-dsp.hashnode.dev/resona-v100-rust-risc-v-assembly-and-dsp-kernels), I wrote about my love for engineering optimization. That lens still guides how I view the world: how do we design things that are smarter, tighter, better?
-
 To me, SoC design is the ultimate optimization problem. What used to be a sprawling mess of chips on a PCB is now a carefully crafted rectangle of silicon. There’s something deeply elegant about that. It's not just engineering—it’s compression, clarity, and control.
 
 But more than that, every SoC tells a story — a story about tradeoffs, constraints, and creativity. When you study one closely, you’re looking into the minds of the engineers who made it—what they prioritized, what they left out, and why.
@@ -101,4 +99,4 @@ If this sparked even a bit of curiosity, I think you’ll enjoy **Aetheron**, my
 
 See you there :)
 
-[→ _[Read Aetheron: Bringing My Own SoC to Life →]_](https://aetheron-soc.hashnode.dev/aetheron-bringing-my-own-soc-to-life?showSharer=true)
+[→ _[Read Aetheron: Bringing My Own SoC to Life →]_](https://prawns.dev/blogs/aetheron)
