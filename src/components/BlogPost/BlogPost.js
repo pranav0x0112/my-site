@@ -75,17 +75,19 @@ export default function BlogPost() {
   return (
     <div className={`blog-post-main ${isDark ? "dark-mode" : ""}`}>
       <div className="blog-post-inner">
-        <h1 className="blog-post-title">{meta.title}</h1>
-        {meta.date && <p className="blog-post-date">{meta.date}</p>}
+        <div className="blog-post-container">
+          <h1 className="blog-post-title">{meta.title}</h1>
+          {meta.date && <p className="blog-post-date">{meta.date}</p>}
 
-        <div className="blog-post-content">
-          {!loading && (
-            <ReactMarkdown
-              children={content}
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeHighlight]}
-            />
-          )}
+          <div className="blog-post-content">
+            {!loading && (
+              <ReactMarkdown
+                children={content}
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeHighlight]}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
