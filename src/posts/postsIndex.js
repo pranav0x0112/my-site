@@ -10,11 +10,11 @@ const posts = [
     "url": "/blogs/tiny-tone"
   },
   {
-    "slug": "aetheron-bringing-my-own-soc-to-life",
+    "slug": "aetheron",
     "title": "Aetheron: Bringing My Own SoC to Life",
-    "description": "My journey building a RISC-V SoC from scratch — designed in Bluespec and capable of running real C code.",
-    "date": "2024-07-10",
-    "url": "/blogs/aetheron-bringing-my-own-soc-to-life"
+    "description": "My journey building a RISC-V SoC from scratch designed in Bluespec.",
+    "date": "2024-06-18",
+    "url": "/blogs/aetheron"
   },
   {
     "slug": "resona",
