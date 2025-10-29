@@ -2,20 +2,20 @@
 // These point to files under public/assets/images/gallery/
 
 const images = [
-  "/assets/images/gallery/01.jpeg",
-  "/assets/images/gallery/02.jpeg",
-  "/assets/images/gallery/03.jpeg",
-  "/assets/images/gallery/04.jpeg",
-  "/assets/images/gallery/05.jpeg",
-  "/assets/images/gallery/06.jpeg",
-  "/assets/images/gallery/07.jpeg",
-  "/assets/images/gallery/08.jpeg",
-  "/assets/images/gallery/09.jpeg",
-  "/assets/images/gallery/10.jpeg",
-  "/assets/images/gallery/12.jpeg",
-  "/assets/images/gallery/13.jpeg",
-  "/assets/images/gallery/14.jpeg",
-  "/assets/images/gallery/15.jpeg",
+  "/assets/images/gallery/car_1.jpeg",
+  "/assets/images/gallery/cat_1.jpeg",
+  "/assets/images/gallery/drawing_1.jpeg",
+  "/assets/images/gallery/drawing_2.jpeg",
+  "/assets/images/gallery/drawing_3.jpeg",
+  "/assets/images/gallery/flower_1.jpeg",
+  "/assets/images/gallery/moon_1.jpeg",
+  "/assets/images/gallery/sky_1.jpeg",
+  "/assets/images/gallery/sky_2.jpeg",
+  "/assets/images/gallery/sky_3.jpeg",
+  "/assets/images/gallery/sky_4.jpeg",
+  "/assets/images/gallery/trees_1.jpeg",
+  "/assets/images/gallery/trees_2.jpeg",
+  "/assets/images/gallery/trees_3.jpeg",
 ];
 
 export default images;
