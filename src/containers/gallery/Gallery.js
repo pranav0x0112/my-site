@@ -77,8 +77,13 @@ export default function Gallery() {
           <p className="gallery-sub">A small collection of images.</p>
 
           <div className="gallery-grid">
-            {images.map((src, i) => {
+            {images.map((item, i) => {
               if (failed.has(i)) return null;
+              const isString = typeof item === 'string';
+              const src = isString ? item : item.original;
+              const srcSet = isString ? null : item.srcset;
+              const alt = isString ? `Gallery ${i + 1}` : item.alt || `Gallery ${i + 1}`;
+
               return (
                 <figure
                   key={i}
@@ -90,7 +95,9 @@ export default function Gallery() {
                 >
                   <img
                     src={src}
-                    alt={`Gallery ${i + 1}`}
+                    srcSet={srcSet || undefined}
+                    sizes="(min-width: 900px) 50vw, 100vw"
+                    alt={alt}
                     loading="lazy"
                     onError={() => setFailed(prev => new Set([...prev, i]))}
                   />
@@ -104,7 +111,14 @@ export default function Gallery() {
               <button className="lightbox-close" onClick={e => { e.stopPropagation(); closeLightbox(); }} aria-label="Close">×</button>
               <button className="lightbox-prev" onClick={e => { e.stopPropagation(); showPrev(e); }} aria-label="Previous">‹</button>
               <div className="lightbox-inner" onClick={e => e.stopPropagation()}>
-                <img src={images[lightboxIndex]} alt={`Full ${lightboxIndex + 1}`} />
+                {(() => {
+                  const item = images[lightboxIndex];
+                  const isString = typeof item === 'string';
+                  const src = isString ? item : item.original;
+                  const srcSet = isString ? null : item.srcset;
+                  const alt = isString ? `Full ${lightboxIndex + 1}` : item.alt || `Full ${lightboxIndex + 1}`;
+                  return <img src={src} srcSet={srcSet || undefined} alt={alt} />;
+                })()}
               </div>
               <button className="lightbox-next" onClick={e => { e.stopPropagation(); showNext(e); }} aria-label="Next">›</button>
             </div>

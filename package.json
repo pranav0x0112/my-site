@@ -31,14 +31,15 @@
     "dompurify": "^2.3.10",
     "highlight.js": "^11.8.0"
     ,
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.32.1"
   },
   "scripts": {
     "predeploy": "npm run build",
     "prestart": "node scripts/generatePostsIndex.js",
     "start": "node fetch.js && react-scripts start",
-    "prebuild": "node scripts/generatePostsIndex.js",
-    "build": "node fetch.js && react-scripts build",
+  "prebuild": "node scripts/generatePostsIndex.js && node scripts/generateGalleryImages.js",
+  "build": "node fetch.js && react-scripts build",
     "generate-posts": "node scripts/generatePostsIndex.js",
     "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
