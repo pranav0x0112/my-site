@@ -14,6 +14,7 @@ export default function Gallery() {
   }, []);
 
   const [lightboxIndex, setLightboxIndex] = useState(-1);
+  const [failed, setFailed] = useState(new Set());
 
   const openLightbox = useCallback(index => setLightboxIndex(index), []);
   const closeLightbox = useCallback(() => setLightboxIndex(-1), []);
@@ -41,8 +42,29 @@ export default function Gallery() {
         if (e.key === "ArrowLeft") showPrev();
         if (e.key === "ArrowRight") showNext();
       };
+
+      // touch swipe support for mobile: detect horizontal swipe
+      let touchStartX = 0;
+      const onTouchStart = e => {
+        touchStartX = e.touches && e.touches[0] && e.touches[0].clientX;
+      };
+      const onTouchEnd = e => {
+        const touchEndX = e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX;
+        if (!touchStartX || !touchEndX) return;
+        const dx = touchEndX - touchStartX;
+        if (Math.abs(dx) < 40) return; // threshold
+        if (dx > 0) showPrev();
+        else showNext();
+      };
       window.addEventListener("keydown", onKey);
-      return () => window.removeEventListener("keydown", onKey);
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
+
+      return () => {
+        window.removeEventListener("keydown", onKey);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchend", onTouchEnd);
+      };
     }
   }, [lightboxIndex, closeLightbox, showPrev, showNext]);
 
@@ -55,18 +77,26 @@ export default function Gallery() {
           <p className="gallery-sub">A small collection of images.</p>
 
           <div className="gallery-grid">
-            {images.map((src, i) => (
-              <figure
-                key={i}
-                className="gallery-item"
-                onClick={() => openLightbox(i)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={e => e.key === "Enter" && openLightbox(i)}
-              >
-                <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" />
-              </figure>
-            ))}
+            {images.map((src, i) => {
+              if (failed.has(i)) return null;
+              return (
+                <figure
+                  key={i}
+                  className="gallery-item"
+                  onClick={() => openLightbox(i)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={e => e.key === "Enter" && openLightbox(i)}
+                >
+                  <img
+                    src={src}
+                    alt={`Gallery ${i + 1}`}
+                    loading="lazy"
+                    onError={() => setFailed(prev => new Set([...prev, i]))}
+                  />
+                </figure>
+              );
+            })}
           </div>
 
           {lightboxIndex >= 0 && (
@@ -75,7 +105,6 @@ export default function Gallery() {
               <button className="lightbox-prev" onClick={e => { e.stopPropagation(); showPrev(e); }} aria-label="Previous">‹</button>
               <div className="lightbox-inner" onClick={e => e.stopPropagation()}>
                 <img src={images[lightboxIndex]} alt={`Full ${lightboxIndex + 1}`} />
-                <div className="lightbox-caption">{`Image ${lightboxIndex + 1}`}</div>
               </div>
               <button className="lightbox-next" onClick={e => { e.stopPropagation(); showNext(e); }} aria-label="Next">›</button>
             </div>

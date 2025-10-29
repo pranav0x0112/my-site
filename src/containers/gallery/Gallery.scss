@@ -18,8 +18,14 @@ body.gallery-bg #root {
 /* Make header/footer transparent so they don't show an alternate block color */
 body.gallery-bg .header { background-color: transparent !important; }
 body.gallery-bg .footer-div { background-color: transparent !important; }
-.gallery-title { font-size: 34px; margin: 0 0 0.25rem 0; }
-.gallery-sub { color: rgba(255,255,255,0.6); margin: 0 0 1rem 0; }
+.gallery-title { font-size: 34px; margin: 0 0 0.25rem 0; text-align: center; }
+.gallery-sub { color: rgba(255,255,255,0.6); margin: 0 0 1rem 0; text-align: center; }
+
+/* Center the header block and give some breathing room */
+.gallery-inner > .gallery-title, .gallery-inner > .gallery-sub {
+	display: block;
+	width: 100%;
+}
 
 .gallery-grid {
 	/* Masonry-style layout using CSS columns so each image keeps its aspect ratio */
@@ -64,7 +70,7 @@ body.gallery-bg .footer-div { background-color: transparent !important; }
 	background: rgba(0,0,0,0.85);
 	z-index: 2000;
 }
-.lightbox-inner { max-width: 90%; max-height: 90%; }
+.lightbox-inner { max-width: 90%; max-height: 90%; overflow: auto; background-color: #171c28; }
 .lightbox-inner img { width: 100%; height: auto; display: block; border-radius: 6px; }
 .lightbox-caption { color: rgba(255,255,255,0.85); text-align: center; margin-top: 8px; }
 .lightbox-close, .lightbox-prev, .lightbox-next {
