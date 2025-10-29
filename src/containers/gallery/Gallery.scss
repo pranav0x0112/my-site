@@ -1,0 +1,82 @@
+/* Simple responsive gallery grid */
+.gallery-page { padding: 3.5rem 1.5rem; width: 100%; display: flex; justify-content: center; background-color: #171c28; min-height: 100vh; box-sizing: border-box; }
+.gallery-inner { max-width: 1100px; width: 100%; background-color: transparent; }
+
+/* When gallery is active we'll add a class to body to force a uniform page background */
+body.gallery-bg {
+	background-color: #171c28 !important;
+}
+
+/* Force header/footer and main containers to match gallery background while gallery is active */
+body.gallery-bg .header,
+body.gallery-bg .footer-div,
+body.gallery-bg .main,
+body.gallery-bg #root {
+	background-color: #171c28 !important;
+}
+
+/* Make header/footer transparent so they don't show an alternate block color */
+body.gallery-bg .header { background-color: transparent !important; }
+body.gallery-bg .footer-div { background-color: transparent !important; }
+.gallery-title { font-size: 34px; margin: 0 0 0.25rem 0; }
+.gallery-sub { color: rgba(255,255,255,0.6); margin: 0 0 1rem 0; }
+
+.gallery-grid {
+	/* Masonry-style layout using CSS columns so each image keeps its aspect ratio */
+	column-count: 2;
+	column-gap: 16px;
+}
+
+.gallery-item {
+	display: inline-block; /* required for column flow */
+	width: 100%;
+	margin: 0 0 16px 0;
+	background: transparent;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.gallery-item img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.gallery-item figcaption {
+	font-size: 13px;
+	color: rgba(255,255,255,0.75);
+	padding: 8px 6px;
+	text-align: center;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 900px) {
+	.gallery-grid { column-count: 1; }
+}
+
+/* Lightbox styles */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.85);
+	z-index: 2000;
+}
+.lightbox-inner { max-width: 90%; max-height: 90%; }
+.lightbox-inner img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.lightbox-caption { color: rgba(255,255,255,0.85); text-align: center; margin-top: 8px; }
+.lightbox-close, .lightbox-prev, .lightbox-next {
+	position: absolute;
+	background: none;
+	color: white;
+	border: none;
+	font-size: 28px;
+	padding: 8px 12px;
+	cursor: pointer;
+}
+.lightbox-close { top: 18px; right: 22px; }
+.lightbox-prev { left: 12px; }
+.lightbox-next { right: 12px; }
+.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); }
