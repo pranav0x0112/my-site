@@ -10,13 +10,13 @@ const images = [
   "/assets/images/gallery/06.jpeg",
   "/assets/images/gallery/07.jpeg",
   "/assets/images/gallery/08.jpeg",
-  "/assets/images/gallery/15.jpeg",
+  "/assets/images/gallery/09.jpeg",
   "/assets/images/gallery/10.jpeg",
   "/assets/images/gallery/11.jpeg",
   "/assets/images/gallery/12.jpeg",
   "/assets/images/gallery/13.jpeg",
   "/assets/images/gallery/14.jpeg",
-  "/assets/images/gallery/09.jpeg",
+  "/assets/images/gallery/15.jpeg",
 ];
 
 export default images;
