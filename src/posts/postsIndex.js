@@ -17,18 +17,18 @@ const posts = [
     "url": "/blogs/riscv-linux"
   },
   {
+    "slug": "aetheron",
+    "title": "Aetheron: Bringing My Own SoC to Life",
+    "description": "From wires to life: how I built and booted my own System-On-Chip using BlueSpec SystemVerilog",
+    "date": "2025-07-18",
+    "url": "/blogs/aetheron"
+  },
+  {
     "slug": "what-is-a-soc",
     "title": "What is a System-on-Chip, Really?",
     "description": "A gentle breakdown of what SoCs are and why I’m obsessed with them.",
     "date": "2025-07-18",
     "url": "/blogs/what-is-a-soc"
-  },
-  {
-    "slug": "aetheron",
-    "title": "Aetheron: Bringing My Own SoC to Life",
-    "description": "From wires to life: how I built and booted my own System-On-Chip using BlueSpec SystemVerilog",
-    "date": "2024-06-18",
-    "url": "/blogs/aetheron"
   }
 ];
 

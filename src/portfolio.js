@@ -191,7 +191,7 @@ const bigProjects = {
       image: require("./assets/images/specula.png"),
       projectName: "Specula",
       projectDesc:
-        "A pipelined RISC-V core written in Bluespec SystemVerilog with basic hazard resolution and a simulation-first testing setup.",
+        "An Out of Order RISC-V Core implemented in Bluespec SystemVerilog, featuring dynamic scheduling and dual issue capabilities.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -345,7 +345,6 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+91-6364820816",
   email_address: "pranav.m1205@gmail.com"
 };
 

@@ -8,6 +8,14 @@
   margin: 0.3rem 0;
 }
 
+/* smaller, subtle footer line (used for short quotes/credits) */
+.footer-small {
+  font-size: 13px;
+  font-style: italic;
+  margin: 0;
+  opacity: 0.9;
+}
+
 /* Dark mode footer text color — both class orders */
 .footer-text.dark-mode,
 .dark-mode.footer-text {
