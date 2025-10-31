@@ -54,9 +54,16 @@ async function build() {
   });
 
   const items = [];
+  let failedCount = 0;
   for (const f of files) {
     const res = await processImage(f);
     if (res) items.push(res);
+    else failedCount++;
+  }
+
+  if (failedCount > 0) {
+    console.error(`Failed to process ${failedCount} image(s). Exiting with non-zero code to surface build failure.`);
+    process.exit(1);
   }
 
   // Build export content
@@ -78,6 +85,27 @@ export default images;
 
   fs.writeFileSync(OUT_FILE, js, 'utf8');
   console.log('Wrote', OUT_FILE, 'with', entries.length, 'images');
+
+  // verify generated files exist and are non-zero size
+  const missing = [];
+  for (const it of items) {
+    for (const v of it.variants || []) {
+      const p = path.join(GENERATED_DIR, v.file);
+      try {
+        const st = fs.statSync(p);
+        if (!st.isFile() || st.size === 0) missing.push(p);
+      } catch (e) {
+        missing.push(p);
+      }
+    }
+  }
+
+  if (missing.length) {
+    console.error('The following generated files are missing or empty:');
+    missing.forEach(m => console.error(' -', m));
+    console.error('Exiting with non-zero code so CI/Netlify shows the failure.');
+    process.exit(1);
+  }
 }
 
 build().catch(err => {
