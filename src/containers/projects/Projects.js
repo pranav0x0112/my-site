@@ -47,6 +47,9 @@ export default function Projects() {
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
           <h1 className="project-title">Open Source Projects</h1>
+          <p className="project-description-centered">
+            A glimpse into some of my polished builds. For more, check out my GitHub!
+          </p>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {

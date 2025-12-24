@@ -1,3 +1,6 @@
+.greeting-text-div {
+  margin-top: 140px;
+}
 @import "../../_globalColor";
 
 .main {
@@ -7,14 +10,18 @@
   margin-top: 4rem;
 }
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 80px 24px 48px 24px;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 .greeting-main {
   display: flex;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .subTitle {
@@ -53,10 +60,6 @@
   line-height: 40px;
 }
 
-.greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
-}
 
 .wave-emoji {
   animation-duration: 1.8s;
@@ -115,9 +118,7 @@
   .greeting-main {
     display: block;
   }
-  .greeting-image-div {
-    height: 256px;
-  }
+  /* .greeting-image-div removed for simplicity */
 }
 
 @media (max-width: 320px) {

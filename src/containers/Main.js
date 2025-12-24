@@ -44,15 +44,29 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Greeting />
-            <Skills />
+            <div className="homepage-grid">
+              <div className="homepage-row">
+                <div className="homepage-col homepage-greeting">
+                  <Greeting />
+                </div>
+                <div className="homepage-col homepage-skills">
+                  <Skills />
+                </div>
+              </div>
+              <div className="homepage-row">
+                <div className="homepage-col homepage-projects">
+                  <Projects />
+                  <StartupProject />
+                </div>
+                <div className="homepage-col homepage-blogs">
+                  <Blogs previewMode={true} />
+                </div>
+              </div>
+            </div>
             <StackProgress />
             <Education />
             <WorkExperience />
-            <Projects />
-            <StartupProject />
             <Achievement />
-            <Blogs previewMode={true} />
             <Talks />
             <Twitter />
             <Podcast />

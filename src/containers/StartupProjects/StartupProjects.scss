@@ -25,6 +25,7 @@
   border-radius: 10px;
   border: 1px solid $lightBorder1;
   justify-content: center;
+  height: 80%;
 }
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
@@ -58,10 +59,64 @@
   align-items: center;
 }
 
+// Unified projects-container for grid layout and spacing
 .projects-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 0rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem 1rem;
+  justify-content: center;
+}
+
+
+// Align StartupProjects section with Projects and Blogs
+
+#projects.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: unset;
+}
+
+// Ensure horizontal alignment with blogs section
+.homepage-row > .homepage-col.homepage-projects > #projects.main {
+  align-items: center;
+  justify-content: flex-start;
+  vertical-align: top;
+}
+
+// Title and subtitle alignment
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.project-subtitle {
+  text-transform: none;
+  font-size: 1.1rem;
+  color: $subTitle;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-top: 1rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1100px) {
+  #projects.main {
+    padding: 24px 8px 0 8px;
+  }
 }
 
 .project-card-footer span.project-tag {

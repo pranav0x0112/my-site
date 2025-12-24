@@ -1,3 +1,47 @@
+// Homepage grid layout for two-column sections
+.homepage-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto 2rem auto;
+}
+.homepage-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+}
+.homepage-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.homepage-greeting, .homepage-projects {
+  margin-right: 1rem;
+}
+.homepage-skills, .homepage-blogs {
+  margin-left: 1rem;
+}
+@media (max-width: 1100px) {
+  .homepage-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .homepage-greeting, .homepage-projects, .homepage-skills, .homepage-blogs {
+    margin: 0;
+  }
+}
+// Reduce vertical gaps in main content
+.greet-main, .skills-main-div, .repo-cards-div-main, .blog-main-div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 @import "../_globalColor";
 
 .dark-mode {
