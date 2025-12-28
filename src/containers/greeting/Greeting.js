@@ -6,6 +6,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import StyleContext from "../../contexts/StyleContext";
 import AMWaveLottie from "../../components/amWave";
+import { greeting } from "../../portfolio";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);

@@ -3,6 +3,7 @@ import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import { contactInfo } from "../../portfolio";
 
 export default function Contact() {
   const {isDark} = useContext(StyleContext);

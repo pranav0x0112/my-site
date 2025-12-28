@@ -3,6 +3,7 @@ import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import { skillsSection } from "../../portfolio";
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
