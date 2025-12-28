@@ -31,6 +31,11 @@
   flex-wrap: wrap;
 }
 
+/* allow absolutely positioned widgets inside header */
+.header {
+  position: relative;
+}
+
 .header ul {
   margin: 0;
   padding: 0;
@@ -61,6 +66,11 @@
   text-decoration: none;
   margin-top: 10px;
   line-height: normal;
+}
+
+/* make logo an anchoring container for the AM wave */
+.header .logo {
+  position: relative;
 }
 
 .header .logo-name {

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" version="1.0" width="1220.0pt" height="660.0pt" viewBox="30.0 0.0 1220.0 720.0" preserveAspectRatio="xMidYMid meet">
+<svg:defs><svg:clipPath id="waveClip" clipPathUnits="userSpaceOnUse"><svg:rect x="200" y="200" width="12400" height="6600" /></svg:clipPath></svg:defs><svg:defs><svg:clipPath id="waveClip" clipPathUnits="userSpaceOnUse"><svg:rect x="0" y="200" width="12830" height="6800" /></svg:clipPath></svg:defs><svg:defs><svg:clipPath id="waveClip"><svg:rect x="0" y="0" width="1220" height="700" /></svg:clipPath></svg:defs><svg:metadata>
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</svg:metadata>
+<svg:rect x="0" y="0" width="1220" height="720" fill="#171c28" />
+<svg:g transform="translate(0.000000,720.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none" clip-path="url(#waveClip)">
+<svg:path stroke="#fff" stroke-width="28" fill="none" d="M 5045.0,3693.0 C 3526.0,3672.0 2011.0,3636.0 920.0,3595.0 C 846.0,3592.0 688.0,3588.0 570.0,3585.0 C 452.0,3582.0 282.0,3577.0 192.0,3574.0 L 30.0,3568.0 L 30.0,1784.0 L 30.0,0.0 L 6430.0,0.0 L 12830.0,0.0 L 12830.0,1784.0 L 12830.0,3568.0 L 12668.0,3574.0 C 12271.0,3588.0 11173.0,3621.0 10635.0,3635.0 C 10520.0,3638.0 10360.0,3643.0 10280.0,3645.0 C 10009.0,3655.0 9277.0,3670.0 8390.0,3685.0 C 7635.0,3697.0 5689.0,3702.0 5045.0,3693.0" />
+</svg:g>
+</svg:svg>

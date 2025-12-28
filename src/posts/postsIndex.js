@@ -3,6 +3,13 @@
 
 const posts = [
   {
+    "slug": "simt_warp_divergence",
+    "title": "Why GPU Threads Aren’t What They Look Like: SIMT + Divergence Explained",
+    "description": "An intermediate look at how GPU ‘threads’ really behave under the SIMT model, why warps share an instruction stream, and what actually happens when control flow splits.",
+    "date": "2025-12-02",
+    "url": "/blogs/simt_warp_divergence"
+  },
+  {
     "slug": "tiny-tone",
     "title": "Tiny Tone - My First Accepted Tiny-Tapeout Design",
     "description": "A small PWM-based audio tone generator submitted to TinyQV Tiny Tapeout — design notes and lessons learned.",

@@ -8,6 +8,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import AMWaveLottie from "../../components/amWave";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -49,6 +50,9 @@ export default function Greeting() {
                 )}
               </div>
             </div>
+          </div>
+          <div style={{margin: '32px 0'}}>
+            <AMWaveLottie />
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Headroom from "react-headroom";
 import "./Header.scss";
+import AMWave from "../../components/amWave/AMWave";
 import StyleContext from "../../contexts/StyleContext";
 import { guestbookSection } from "../../portfolio";
 import {
@@ -39,6 +40,7 @@ function Header() {
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
           <span className="logo-name">{isClient ? greeting.username : ""}</span>
+          <AMWave />
         </a>
 
         <input className="menu-btn" type="checkbox" id="menu-btn" />

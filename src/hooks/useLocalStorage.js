@@ -5,6 +5,10 @@ export const useLocalStorage = (key, initialValue) => {
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
     try {
+      // only access localStorage in a browser environment
+      if (typeof window === "undefined" || !window.localStorage) {
+        return initialValue;
+      }
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
       // Parse stored json or if none return initialValue
@@ -25,8 +29,10 @@ export const useLocalStorage = (key, initialValue) => {
         value instanceof Function ? value(storedValue) : value;
       // Save state
       setStoredValue(valueToStore);
-      // Save to local storage
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      // Save to local storage (only if available)
+      if (typeof window !== "undefined" && window.localStorage) {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      }
     } catch (error) {
       // A more advanced implementation would handle the error case
       console.log(error);

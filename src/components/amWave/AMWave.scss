@@ -1,0 +1,110 @@
+.am-wave-svg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.am-wave, .am-wave-svg {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+@import "../../_globalColor";
+
+.am-wave {
+  width: 200px;
+  aspect-ratio: 16/9;
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: calc(100% + 6px);
+  pointer-events: auto;
+  z-index: 9999;
+  color: #171c28;
+  background: #171c28;
+  overflow: hidden;
+  margin: -1px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+.dark-menu .am-wave {
+  color: $textColorDark;
+}
+
+.am-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.am-wave-track {
+  transform-origin: center;
+  /* subtle vertical breathing */
+  display: block;
+  padding: 0;
+  background: none;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.am-wave-glow {
+  opacity: 0.12;
+  stroke-width: 8;
+  filter: blur(3px);
+  transform-origin: center;
+  /* make the glow gently pulse */
+  animation: am-glow-pulse 3.6s ease-in-out infinite;
+}
+
+.am-wave-fore {
+  stroke-width: 3.5;
+  /* dashed motion on the foreground creates the illusion of movement */
+  stroke-dasharray: 8 12;
+  animation: am-dash 1.8s linear infinite;
+}
+
+@keyframes am-move {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+@keyframes am-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes am-breathe {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-2px) translateX(-1px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes am-glow-pulse {
+  0% { opacity: 0.08; }
+  50% { opacity: 0.16; }
+  100% { opacity: 0.08; }
+}
+
+@media (max-width: 768px) {
+  .am-wave {
+    width: 160px;
+    height: 50px;
+    left: 0;
+    top: calc(100% + 4px);
+  }
+}
