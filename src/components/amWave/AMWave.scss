@@ -109,3 +109,60 @@
     top: calc(100% + 4px);
   }
 }
+
+.am-wave-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: inherit;
+
+  background: rgba(23, 28, 40, 0.35);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  pointer-events: none;
+}
+
+.am-wave:hover .am-wave-hint {
+  opacity: 1;
+}
+
+.am-wave-music {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+
+  background: rgba(23, 28, 40, 0.96);
+  color: inherit;
+
+  padding: 8px;
+  overflow-y: auto;
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.am-track {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.am-track img {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
