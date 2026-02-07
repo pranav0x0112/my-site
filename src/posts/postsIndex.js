@@ -3,6 +3,13 @@
 
 const posts = [
   {
+    "slug": "riscv-toolchain",
+    "title": "You Don't Need Expensive Tools to Play with Silicon",
+    "description": "A hands-on guide to free, open-source tools that let students design, simulate, and build real processors—no million-dollar lab required.",
+    "date": "2026-02-07",
+    "url": "/blogs/riscv-toolchain"
+  },
+  {
     "slug": "simt_warp_divergence",
     "title": "Why GPU Threads Aren’t What They Look Like: SIMT + Divergence Explained",
     "description": "An intermediate look at how GPU ‘threads’ really behave under the SIMT model, why warps share an instruction stream, and what actually happens when control flow splits.",
