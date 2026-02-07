@@ -2,7 +2,7 @@
 title: "You Don't Need Expensive Tools to Play with Silicon"
 date: "2026-02-07"
 tags: [tech, RISC-V, FOSS, hardware] 
-description: "A hands-on guide to free, open-source tools that let students design, simulate, and build real processors—no million-dollar lab required."
+description: "A hands-on guide to free, open-source tools that let students design, simulate, and build real processors, no million-dollar lab required."
 permalink: posts/{{ title | slug }}/index.html
 author_name: M Pranav 
 author_link: "https://github.com/pranav0x0112"
@@ -12,7 +12,7 @@ author_link: "https://github.com/pranav0x0112"
 
 In the [previous post](https://homebrew.hsp-ec.xyz/posts/risc-v:-the-linux-of-hardware/), we explored why RISC-V is the "Linux of hardware" and how it's making processor design accessible to everyone. Now let's talk about the actual tools that let you build, simulate, and hack on real processors.
 
-**The good news?** You don't need expensive licenses, proprietary toolchains, or a university lab. The hardware hacking stack is wide open—and it's free.
+**The good news?** You don't need expensive licenses, proprietary toolchains, or a university lab. The hardware hacking stack is wide open and it's free.
 
 ## Breaking the Myth: Hardware != Expensive
 
