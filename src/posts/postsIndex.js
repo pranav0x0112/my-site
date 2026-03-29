@@ -3,9 +3,16 @@
 
 const posts = [
   {
+    "slug": "herald",
+    "title": "When Microcontrollers Struggle with Math: Building Herald",
+    "description": "A deep dive into building Herald, a fixed-point DSP coprocessor for Tiny Tapeout, from architecture and CORDIC design to GDS layout and silicon.",
+    "date": "2026-03-29",
+    "url": "/blogs/herald"
+  },
+  {
     "slug": "riscv-toolchain",
     "title": "You Don't Need Expensive Tools to Play with Silicon",
-    "description": "A hands-on guide to free, open-source tools that let students design, simulate, and build real processors—no million-dollar lab required.",
+    "description": "A hands-on guide to free, open-source tools that let students design, simulate, and build real processors, no million-dollar lab required.",
     "date": "2026-02-07",
     "url": "/blogs/riscv-toolchain"
   },
