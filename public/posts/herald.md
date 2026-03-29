@@ -35,7 +35,7 @@ That already covers a lot of real-world use cases like filtering, sensor fusion,
 
 Internally, this is handled by two main blocks: 
 - A [CORDIC](https://www.allaboutcircuits.com/technical-articles/an-introduction-to-the-cordic-algorithm/) engine for trigonometry and vector math
- A [MAC](https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation) unit for fast arithmetic accumulation
+- A [MAC](https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation) unit for fast arithmetic accumulation
 
 A small control interface ties everything together and keeps the interaction simple.
 
